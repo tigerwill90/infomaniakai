@@ -10,9 +10,8 @@ import (
 
 	"github.com/tigerwill90/infomaniakai/internal"
 	"github.com/tmc/langchaingo/callbacks"
-	"github.com/tmc/langchaingo/schema"
-
 	"github.com/tmc/langchaingo/llms"
+	"github.com/tmc/langchaingo/schema"
 )
 
 const defaultBaseUrl = "https://api.infomaniak.com"
@@ -74,7 +73,7 @@ func (o *LLM) GenerateContent(ctx context.Context, messages []llms.MessageConten
 		Model:             opts.Model,
 		Messages:          chatMsgs,
 		MaxNewTokens:      opts.MaxTokens,
-		ProfileType:       "standard",
+		ProfileType:       "strict",
 		RepetitionPenalty: opts.RepetitionPenalty,
 		Seed:              opts.Seed,
 		SystemPrompt:      systemPrompt,
